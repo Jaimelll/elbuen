@@ -1,0 +1,77 @@
+<%= form_with(model: citizen, local: true) do |form| %>
+  <% if citizen.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(citizen.errors.count, "error") %> prohibited this citizen from being saved:</h2>
+
+      <ul>
+      <% citizen.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dni %>
+    <%= form.text_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= form.label :primer_apellido %>
+    <%= form.text_field :primer_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :segundo_apellido %>
+    <%= form.text_field :segundo_apellido %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prenombres %>
+    <%= form.text_field :prenombres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sexo %>
+    <%= form.number_field :sexo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :estado_civil %>
+    <%= form.number_field :estado_civil %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nacimiento %>
+    <%= form.date_select :nacimiento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :foto %>
+    <%= form.text_field :foto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sele1 %>
+    <%= form.date_select :sele1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sele2 %>
+    <%= form.date_select :sele2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sele3 %>
+    <%= form.text_field :sele3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sele4 %>
+    <%= form.number_field :sele4 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
