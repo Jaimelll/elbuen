@@ -26,8 +26,8 @@ module Elbuen
     :port => 587,
     :authentication => :plain,
     :domain => 'gmail.com',
-    :user_name => ENV['jaduran0102@gmail.com'],
-    :password => ENV['vanessapaola'],
+     #:user_name => ENV['jaduran0102@gmail.com'],
+     #:password => ENV['vanessapaola'],
     }
   end
 end
