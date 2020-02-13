@@ -14,13 +14,21 @@ ActiveAdmin.register Citizen do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+  menu priority: 2, label: "Ciudadanos"
+filter :dni
+filter :primer_apellido
+filter :segundo_apellido
+filter :prenombres
+
   index :title => 'Lista de Ciudadanos' do
 
 
 
 
     column(:dni) 
-   
+    column(:primer_apellido) 
+    column(:segundo_apellido) 
+    column(:prenombres) 
     column("Foto") do   |emple|
       unless emple.foto.blank?
        li   image_tag emple.foto.thumb.url, size: "100"
@@ -41,6 +49,9 @@ form :title => 'Edicion Personal'  do |f|
  f.inputs  do
 
    f.input :dni, :input_html => { :style =>  'width:30%'}
+   f.input :primer_apellido, :input_html => { :style =>  'width:30%'}
+   f.input :segundo_apellido, :input_html => { :style =>  'width:30%'}
+   f.input :prenombres, :input_html => { :style =>  'width:30%'}
    
    f.input :foto, :as => :file, :hint => f.object.foto.present? \
           ? image_tag(f.object.foto.url(:thumb))
@@ -62,7 +73,10 @@ show :title => ' Personal'  do
        attributes_table  do
 
         row :dni
-       
+        row :primer_apellido
+        row :segundo_apellido
+        row :prenombres
+             
         row :foto
 
 
