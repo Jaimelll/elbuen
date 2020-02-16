@@ -78,11 +78,22 @@ show :title => ' Personal'  do
        attributes_table  do     
  
        
-        row :dni 
-        row :primer_apellido
-        row :segundo_apellido
-     #   row :prenombres
-             
+        
+        row :dni
+        row "Primer Apellido" do  |emple| 
+               Citizen.find_by_id(params[:id]).primer_apellido
+         
+        end
+       
+        row "Segundo Apellido" do  |emple| 
+          Citizen.find_by_id(params[:id]).segundo_apellido
+    
+        end
+        
+        row "Prenombres" do  |emple| 
+          Citizen.find_by_id(params[:id]).prenombres
+    
+        end     
      #   row :foto
 
 

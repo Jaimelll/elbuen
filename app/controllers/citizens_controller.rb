@@ -11,6 +11,6 @@ def jalar(vadni,vpara)
   value1 =value0['DatosPerson'][0]
   Citizen.where(id:vpara).update_all( primer_apellido:value1["ApellidoPaterno"],
           segundo_apellido:value1["ApellidoMaterno"],prenombres:value1["Nombres"])
-  
+          
 end#def jalar
 end#class
