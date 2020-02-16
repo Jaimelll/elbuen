@@ -20,8 +20,11 @@ filter :primer_apellido
 filter :segundo_apellido
 filter :prenombres
 
-  index :title => 'Lista de Ciudadanos' do
 
+
+  index :title => 'Lista de Ciudadanos' do
+   
+   
 
 
 
@@ -49,9 +52,9 @@ form :title => 'Edicion Personal'  do |f|
  f.inputs  do
 
    f.input :dni, :input_html => { :style =>  'width:30%'}
-   f.input :primer_apellido, :input_html => { :style =>  'width:30%'}
-   f.input :segundo_apellido, :input_html => { :style =>  'width:30%'}
-   f.input :prenombres, :input_html => { :style =>  'width:30%'}
+  # f.input :primer_apellido, :input_html => { :style =>  'width:30%'}
+  # f.input :segundo_apellido, :input_html => { :style =>  'width:30%'}
+  # f.input :prenombres, :input_html => { :style =>  'width:30%'}
    
    f.input :foto, :as => :file, :hint => f.object.foto.present? \
           ? image_tag(f.object.foto.url(:thumb))
@@ -69,15 +72,18 @@ form :title => 'Edicion Personal'  do |f|
 end
 
 show :title => ' Personal'  do
+  reporte = CitizensController.new
+  reporte.jalar( Citizen.find_by_id(params[:id]).dni,params[:id])
 
-       attributes_table  do
-
-        row :dni
+       attributes_table  do     
+ 
+       
+        row :dni 
         row :primer_apellido
         row :segundo_apellido
-        row :prenombres
+     #   row :prenombres
              
-        row :foto
+     #   row :foto
 
 
        end
