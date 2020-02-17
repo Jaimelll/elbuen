@@ -72,6 +72,7 @@ form :title => 'Edicion Personal'  do |f|
 end
 
 show :title => ' Personal'  do
+
   reporte = CitizensController.new
   reporte.jalar( Citizen.find_by_id(params[:id]).dni,params[:id])
 

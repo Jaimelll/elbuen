@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser do
-  permit_params :email, :password, :password_confirmation
+  permit_params :email, :password, :password_confirmation,
+        :current_sign_in_at, :sign_in_count
 
 
   menu priority: 4, label: "Usuarios"
