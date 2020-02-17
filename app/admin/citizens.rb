@@ -93,7 +93,21 @@ show :title => ' Personal'  do
         row "Prenombres" do  |emple| 
           Citizen.find_by_id(params[:id]).prenombres
     
-        end     
+        end 
+        row "Nacimiento" do  |emple| 
+          Citizen.find_by_id(params[:id]).nacimiento
+    
+        end 
+        row "Sexo" do  |emple| 
+          case Citizen.find_by_id(params[:id]).sexo
+           when 2
+             "Masculino"
+           when 3
+             "Femenino"            
+          end    
+    
+        end 
+
      #   row :foto
 
 

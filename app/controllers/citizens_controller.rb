@@ -10,7 +10,11 @@ def jalar(vadni,vpara)
   value0 = JSON.parse(open(vruta).read)
   value1 =value0['DatosPerson'][0]
   Citizen.where(id:vpara).update_all( primer_apellido:value1["ApellidoPaterno"],
-          segundo_apellido:value1["ApellidoMaterno"],prenombres:value1["Nombres"])
-          
+          segundo_apellido:value1["ApellidoMaterno"],prenombres:value1["Nombres"],
+          nacimiento:value1["FechaNacimiento"].to_date,sexo:value1["Sexo"].to_i)
+ puts " "       
+ puts "COMIENZA"
+ puts value1["ApellidoPaterno"].length   
+ puts "TERMINA"       
 end#def jalar
 end#class
