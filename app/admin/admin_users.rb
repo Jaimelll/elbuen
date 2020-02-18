@@ -7,7 +7,7 @@
   #actions :all
   
     index  do
-      cat=0
+      cat=1
       if current_admin_user.categoria==cat then
       selectable_column
       id_column
@@ -31,7 +31,7 @@
         f.input :email
         f.input :password
         f.input :password_confirmation
-          cat=0
+          cat=1
         if current_admin_user.categoria==cat then
            f.input :categoria
           
@@ -52,7 +52,7 @@
         row :email
         row :password
         row :password_confirmation
-        cat=0
+        cat=1
         if current_admin_user.categoria==cat then
         row :categoria
        
